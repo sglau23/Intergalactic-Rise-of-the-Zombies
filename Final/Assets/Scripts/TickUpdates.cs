@@ -22,7 +22,7 @@ public class TickUpdates : MonoBehaviour
         }
         for (int i = 0; i < GlobalVariables.capsulePS.Length; i++)
         {
-            GlobalVariables.capsulePS[i] = 0;
+            GlobalVariables.capsulePS[i] = 25;
         }
         for (int i = 0; i < GlobalVariables.capsuleGens.Length; i++)
         {
@@ -49,7 +49,8 @@ public class TickUpdates : MonoBehaviour
 
         for (int i = 0; i < cylinders.Length; i++)
         {
-            float newScaleY = Mathf.Max(0.01f, GlobalVariables.capsuleCount[i] * cylinders[i].heightMultiplier);
+            float cappedCount = Mathf.Min(GlobalVariables.capsuleCount[i], 1000);
+            float newScaleY = Mathf.Max(0.01f, cappedCount * cylinders[i].heightMultiplier);
 
             Vector3 scale = cylinders[i].cylinder.localScale;
             scale.y = newScaleY;
