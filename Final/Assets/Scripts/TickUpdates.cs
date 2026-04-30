@@ -22,7 +22,7 @@ public class TickUpdates : MonoBehaviour
         }
         for (int i = 0; i < GlobalVariables.capsulePS.Length; i++)
         {
-            GlobalVariables.capsulePS[i] = 1;
+            GlobalVariables.capsulePS[i] = 0;
         }
         for (int i = 0; i < GlobalVariables.capsuleGens.Length; i++)
         {
