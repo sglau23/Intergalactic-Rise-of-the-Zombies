@@ -7218,7 +7218,7 @@ GameObject:
   - component: {fileID: 1713292399}
   - component: {fileID: 1713292398}
   m_Layer: 0
-  m_Name: Plane (5)
+  m_Name: Hub
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
