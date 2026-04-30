@@ -284,7 +284,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954311417}
+      - m_Target: {fileID: 443842180}
         m_TargetAssemblyTypeName: TeleportScript, Assembly-CSharp
         m_MethodName: TeleportToLevel
         m_Mode: 3
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954311417}
+      - m_Target: {fileID: 443842180}
         m_TargetAssemblyTypeName: TeleportScript, Assembly-CSharp
         m_MethodName: TeleportToLevel
         m_Mode: 3
@@ -2952,8 +2952,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 443842180}
   m_SourcePrefab: {fileID: 100100000, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+--- !u!1 &443842179 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+  m_PrefabInstance: {fileID: 443842178}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &443842180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443842179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af7b9973a8cf5054a83c9ad19377784e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TeleportScript
+  levelPoints:
+  - {fileID: 394375098}
+  - {fileID: 1021038273}
+  - {fileID: 1130979604}
+  - {fileID: 746712730}
+  - {fileID: 1510879206}
 --- !u!114 &540752705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3642,7 +3668,7 @@ Transform:
   m_GameObject: {fileID: 672401082}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1025, y: 2.64, z: 1005.12}
+  m_LocalPosition: {x: 1025, y: 2.64, z: 1005.15}
   m_LocalScale: {x: 1, y: 2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3984,7 +4010,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954311417}
+      - m_Target: {fileID: 443842180}
         m_TargetAssemblyTypeName: TeleportScript, Assembly-CSharp
         m_MethodName: TeleportToLevel
         m_Mode: 3
@@ -5650,7 +5676,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954311417}
+      - m_Target: {fileID: 443842180}
         m_TargetAssemblyTypeName: TeleportScript, Assembly-CSharp
         m_MethodName: TeleportToLevel
         m_Mode: 3
@@ -8249,7 +8275,6 @@ GameObject:
   - component: {fileID: 1954311414}
   - component: {fileID: 1954311413}
   - component: {fileID: 1954311416}
-  - component: {fileID: 1954311417}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8375,24 +8400,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1954311417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954311412}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af7b9973a8cf5054a83c9ad19377784e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TeleportScript
-  levelPoints:
-  - {fileID: 394375098}
-  - {fileID: 1021038273}
-  - {fileID: 1130979604}
-  - {fileID: 746712730}
-  - {fileID: 1510879206}
 --- !u!114 &1980370052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8587,7 +8594,7 @@ MonoBehaviour:
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1954311417}
+      - m_Target: {fileID: 443842180}
         m_TargetAssemblyTypeName: TeleportScript, Assembly-CSharp
         m_MethodName: TeleportToLevel
         m_Mode: 3
