@@ -52,7 +52,7 @@ public class TickUpdates : MonoBehaviour
 
         for (int i = 0; i < cylinders.Length; i++)
         {
-            float cappedCount = Mathf.Min(GlobalVariables.capsuleCount[i], 1000);
+            float cappedCount = Mathf.Min(GlobalVariables.capsuleCount[i], 150);
             float newScaleY = Mathf.Max(0.01f, cappedCount * cylinders[i].heightMultiplier);
 
             Vector3 scale = cylinders[i].cylinder.localScale;
@@ -63,7 +63,7 @@ public class TickUpdates : MonoBehaviour
             pos.y = cylinders[i].baseY + newScaleY;
             cylinders[i].cylinder.position = pos;
             if (!cylinders[i].reachMax &&
-                GlobalVariables.capsuleCount[i] >= 1000)
+                GlobalVariables.capsuleCount[i] >= 150)
             {
                 cylinders[i].reachMax = true;
 
