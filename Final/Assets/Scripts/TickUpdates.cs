@@ -8,7 +8,9 @@ public class TickUpdates : MonoBehaviour
     {
         public Transform cylinder;
         public float heightMultiplier;
+        public ParticleSystem particles; 
         [HideInInspector] public float baseY;
+        [HideInInspector] public bool reachMax;
     }
     public CylinderData[] cylinders = new CylinderData[13];
 
@@ -32,6 +34,7 @@ public class TickUpdates : MonoBehaviour
         {
             cylinders[i].baseY = cylinders[i].cylinder.position.y - cylinders[i].cylinder.localScale.y;
             cylinders[i].heightMultiplier = 0.0025f; // Adjust this value to control how much the cylinder grows per capsule
+            cylinders[i].reachMax = false; 
         }
     }
 
@@ -59,6 +62,18 @@ public class TickUpdates : MonoBehaviour
             Vector3 pos = cylinders[i].cylinder.position;
             pos.y = cylinders[i].baseY + newScaleY;
             cylinders[i].cylinder.position = pos;
+            if (!cylinders[i].reachMax &&
+                GlobalVariables.capsuleCount[i] >= 1000)
+            {
+                cylinders[i].reachMax = true;
+
+                Vector3 topPos = cylinders[i].cylinder.position;
+                topPos.y += cylinders[i].cylinder.localScale.y;
+
+                cylinders[i].particles.transform.position = topPos;
+                cylinders[i].particles.Play();
+            }
         }
-    }
+        
+            }
 }
