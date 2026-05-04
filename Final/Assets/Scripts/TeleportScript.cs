@@ -3,7 +3,7 @@ using UnityEngine;
 public class TeleportScript : MonoBehaviour
 {
     public Transform[] levelPoints;
-    public int hubIndex =6; // index for main area
+    public int hubIndex =5; // index for main area
     private int currLevel = -1; 
     public void TeleportToLevel(int index)
 {
