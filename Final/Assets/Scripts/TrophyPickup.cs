@@ -28,15 +28,15 @@ public class TrophyPickup : MonoBehaviour
     {
         if (trophyType == TrophyType.Bronze)
         {
-            GlobalVariables.bronzeTropyGrabbed = true;
+            GlobalVariables.bronzeTrophyGrabbed = true;
         }
         else if (trophyType == TrophyType.Silver)
         {
-            GlobalVariables.silverTropyGrabbed = true;
+            GlobalVariables.silverTrophyGrabbed = true;
         }
         else if (trophyType == TrophyType.Gold)
         {
-            GlobalVariables.goldTropyGrabbed = true;
+            GlobalVariables.goldTrophyGrabbed = true;
         }
 
         gameObject.SetActive(false);
