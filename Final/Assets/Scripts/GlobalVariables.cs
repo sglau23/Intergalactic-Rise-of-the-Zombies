@@ -14,6 +14,10 @@ public class GlobalVariables
     public static int[] capsulePS = new int[13];
     public static CapsuleGen[] capsuleGens = new CapsuleGen[13];
 
+    public static bool bronzeTrophyGrabbed = false;
+    public static bool silverTrophyGrabbed = false;
+    public static bool goldTrophyGrabbed = false;
+
     public static void UpdateProduction()
     {
         for (int i = 0; i < capsuleCount.Length; i++)
