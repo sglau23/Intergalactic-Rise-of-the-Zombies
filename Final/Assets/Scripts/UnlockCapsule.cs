@@ -12,9 +12,9 @@ public class UnlockCapsule : MonoBehaviour
 
     public void OnClick()
     {
-        if (GlobalVariables.capsuleCount[currCapsuleIndex - 1] >= 1000)
+        if (GlobalVariables.capsuleCount[currCapsuleIndex - 1] >= 100)
         {
-            GlobalVariables.capsuleCount[currCapsuleIndex - 1] -= 1000;
+            GlobalVariables.capsuleCount[currCapsuleIndex - 1] -= 100;
             if (button1) button1.SetActive(true);
             if (button2) button2.SetActive(true);
             if (button3) button3.SetActive(true);
