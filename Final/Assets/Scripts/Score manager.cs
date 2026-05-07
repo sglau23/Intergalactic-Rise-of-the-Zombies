@@ -7,9 +7,17 @@ public class ScoreManager : MonoBehaviour
     private Dictionary<int, float> bestTimes = new Dictionary<int, float>();
 
     void Awake()
+{
+    if (Instance == null)
     {
         Instance = this;
+        DontDestroyOnLoad(gameObject);
     }
+    else
+    {
+        Destroy(gameObject);
+    }
+}
 
     public void SaveTime(int level, float time)
     {
