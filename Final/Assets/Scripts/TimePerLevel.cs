@@ -6,8 +6,17 @@ public class TimeManager : MonoBehaviour
     public static TimeManager Instance; 
     private float StartTime; 
     private bool timing = false; 
-    void Awake(){
-        Instance = this; 
+     void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     public void StartTimer(){
         StartTime = Time.time; 

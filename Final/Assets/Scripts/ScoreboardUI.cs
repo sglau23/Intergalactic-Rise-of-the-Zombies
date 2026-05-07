@@ -4,7 +4,7 @@ using TMPro;
 public class ScoreboardUI : MonoBehaviour
 {
     public TextMeshProUGUI text;
-    public int totalLevels = 5; // levels BEFORE hub (0–5)
+    public int totalLevels = 6; // levels BEFORE hub (0–5)
 
     void Update()
     {
