@@ -9,7 +9,8 @@ public class ScoreboardUI : MonoBehaviour
     void Update()
     {
         if (ScoreManager.Instance == null) return;
-
+        Debug.Log("Scoreboard updating");
+        Debug.Log(ScoreManager.Instance);
         string display = "Best Times\n\n";
 
         for (int i = 0; i < totalLevels; i++)

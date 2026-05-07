@@ -27,6 +27,10 @@ public class TeleportScript : MonoBehaviour
         if (TimeManager.Instance != null && ScoreManager.Instance != null)
             {
                 float time = TimeManager.Instance.StopTimer();
+                Debug.Log("Trying to save score");
+                Debug.Log("TimeManager: " + TimeManager.Instance);
+                Debug.Log("ScoreManager: " + ScoreManager.Instance);
+                Debug.Log("currLevel: " + currLevel);
                 ScoreManager.Instance.SaveTime(currLevel, time);
 
                 Debug.Log($"Level {currLevel} completed in {time:F2}s");
