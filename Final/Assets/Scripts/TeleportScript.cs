@@ -3,40 +3,56 @@ using UnityEngine;
 public class TeleportScript : MonoBehaviour
 {
     public Transform[] levelPoints;
-    public int hubIndex =5; // index for main area
-    private int currLevel = -1; 
+    public int hubIndex = 5;
+    
+    // Static so it survives if this object is destroyed/recreated
+    private static int currLevel = -1;
+
     public void TeleportToLevel(int index)
-{
-    if (index < 0 || index >= levelPoints.Length)
     {
-        return; 
-    }
-    Transform target = levelPoints[index];
-
-        // Preserve headset height offset
-    Vector3 offset = transform.position - Camera.main.transform.position;
-
-    transform.position = target.position + offset;
-    if(index != hubIndex){
-        currLevel = index; 
-        if(TimeManager.Instance != null){
-            TimeManager.Instance.StartTimer(); 
+        Debug.Log($"TeleportToLevel called: index={index}, hubIndex={hubIndex}, currLevel={currLevel}");
+        
+        if (index < 0 || index >= levelPoints.Length)
+        {
+            Debug.LogWarning("Invalid level index: " + index);
+            return;
         }
-    }
-    else if (currLevel != -1){
-        if (TimeManager.Instance != null && ScoreManager.Instance != null)
+
+        Transform target = levelPoints[index];
+        Vector3 offset = transform.position - Camera.main.transform.position;
+        transform.position = target.position + offset;
+
+        if (index != hubIndex)
+        {
+            currLevel = index;
+            Debug.Log("Started timer for level: " + currLevel);
+            if (TimeManager.Instance != null)
+                TimeManager.Instance.StartTimer();
+            else
+                Debug.LogError("TimeManager.Instance is NULL");
+        }
+        else if (currLevel != -1)
+        {
+            Debug.Log("Returning to hub, saving score for level: " + currLevel);
+            
+            if (TimeManager.Instance == null)
+                Debug.LogError("TimeManager.Instance is NULL on return");
+            if (ScoreManager.Instance == null)
+                Debug.LogError("ScoreManager.Instance is NULL on return");
+
+            if (TimeManager.Instance != null && ScoreManager.Instance != null)
             {
                 float time = TimeManager.Instance.StopTimer();
-                Debug.Log("Trying to save score");
-                Debug.Log("TimeManager: " + TimeManager.Instance);
-                Debug.Log("ScoreManager: " + ScoreManager.Instance);
-                Debug.Log("currLevel: " + currLevel);
                 ScoreManager.Instance.SaveTime(currLevel, time);
-
-                Debug.Log($"Level {currLevel} completed in {time:F2}s");
+                Debug.Log($"Saved: Level {currLevel} = {time:F2}s");
             }
 
             currLevel = -1;
+        }
+        else
+        {
+            // currLevel was -1 when returning to hub
+            Debug.LogWarning("Returned to hub but currLevel was -1 — score not saved. Did the object reset?");
+        }
     }
-}
 }
