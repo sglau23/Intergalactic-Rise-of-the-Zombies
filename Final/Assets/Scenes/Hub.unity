@@ -17829,7 +17829,12 @@ MonoBehaviour:
   - {fileID: 1510879206}
   - {fileID: 1324233297}
   hubIndex: 6
-  clickSound: {fileID: 0}
+  levelSounds:
+  - {fileID: 0}
+  - {fileID: 8300000, guid: 94441ff4d1f214e44aecf3383ff108cd, type: 3}
+  - {fileID: 8300000, guid: 83fdea3831dcd334f86e43b1b89f02e3, type: 3}
+  - {fileID: 8300000, guid: 8f9449b1cc1394e4987de352531387ef, type: 3}
+  audioSource: {fileID: 0}
 --- !u!20 &443842181 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 1767192439, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
