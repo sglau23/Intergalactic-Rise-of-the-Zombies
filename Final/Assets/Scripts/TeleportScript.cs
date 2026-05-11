@@ -4,8 +4,7 @@ public class TeleportScript : MonoBehaviour
 {
     public Transform[] levelPoints;
     public int hubIndex = 5;
-    public AudioClip[] levelSounds; // One clip per level index
-    public AudioSource audioSource;
+    public AudioSource[] levelSounds; // One clip per level index
     
     // Static so it survives if this object is destroyed/recreated
     private static int currLevel = -1;
@@ -23,9 +22,9 @@ public class TeleportScript : MonoBehaviour
         Transform target = levelPoints[index];
         Vector3 offset = transform.position - Camera.main.transform.position;
         transform.position = target.position + offset;
-        if (audioSource != null && index < levelSounds.Length && levelSounds[index] != null)
+        if (levelSounds[index] != null)
         {
-            audioSource.PlayOneShot(levelSounds[index]);
+            levelSounds[index].Play();
         }
 
         if (index != hubIndex)
