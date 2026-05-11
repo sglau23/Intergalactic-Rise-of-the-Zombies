@@ -22,7 +22,7 @@ public class TeleportScript : MonoBehaviour
         Transform target = levelPoints[index];
         Vector3 offset = transform.position - Camera.main.transform.position;
         transform.position = target.position + offset;
-        if (levelSounds[index] != null)
+        if (levelSounds != null && index < levelSounds.Length && levelSounds[index] != null)
         {
             levelSounds[index].Play();
         }
