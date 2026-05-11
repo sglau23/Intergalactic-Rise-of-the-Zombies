@@ -11,6 +11,7 @@ public class CapsuleGen : MonoBehaviour
         {
             GlobalVariables.capsuleCount[capsuleIndex] -= GlobalVariables.capsuleGens[capsuleIndex].price;
             GlobalVariables.capsuleGens[capsuleIndex].count++;
+            GlobalVariables.capsuleGens[capsuleIndex].price = Mathf.RoundToInt(GlobalVariables.capsuleGens[capsuleIndex].price * 1.15f);
             GlobalVariables.UpdateProduction();
             clickSound.Play();
         }
